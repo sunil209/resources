@@ -1,0 +1,46 @@
+{
+  "name": "postclick-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project for new PostClick Website",
+  "scripts": {
+    "lint": "eslint --ext .ts .",
+    "lintFix": "eslint --fix --ext .ts .",
+    "prod": "npx webpack --config app/wp-content/themes/postclick/src/Assets/Build/webpack.config.js",
+    "dev": "npx webpack --config app/wp-content/themes/postclick/src/Assets/Build/webpack.development.config.js",
+    "devWatch": "npx webpack --config app/wp-content/themes/postclick/src/Assets/Build/webpack.development.config.js --watch=true",
+    "updateDatabase": "docker exec -i mysql mysql -uwordpress -pwordpress wordpress < data/database.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.instamanagement.club:instapage/postclick-website.git"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "stylelint": "^13.1.0",
+    "stylelint-config-property-sort-order-smacss": "^6.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "lazysizes": "^5.2.0",
+    "slim-select": "^1.25.0"
+  }
+}

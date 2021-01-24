@@ -1,0 +1,27 @@
+helmDefaults:
+  verify: false
+  wait: true
+  timeout: 900
+
+environments:
+  live:
+    values:
+      - projectName: postclick-website
+        domainName: postclick-live.com
+  uat:
+    values:
+      - projectName: postclick-website
+        domainName: postclick-uat.com
+  dev:
+    values:
+      - projectName: postclick-website
+        domainName: postclick-uat.com
+
+releases:
+  - name: postclick-website-{{ .Environment.Name }}
+    namespace: website-{{ .Environment.Name }}
+    chart: ./helm/postclick-website/
+    values:
+      - env/common.yaml.gotmpl
+      - env/{{ .Environment.Name }}/configuration.yaml.gotmpl
+      - env/{{ .Environment.Name }}/environment_variables.yaml.gotmpl

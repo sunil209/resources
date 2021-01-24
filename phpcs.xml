@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name="PostClick">
+    <description>The PSR12 coding standard.</description>
+    <rule ref="PSR12"/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php" />
+    <file>app/wp-content/themes/postclick</file>
+    <file>app/wp-content/mu-plugins</file>
+
+    <exclude-pattern>vendor</exclude-pattern>
+</ruleset>
